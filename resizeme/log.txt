@@ -1,0 +1,10 @@
+Process started at: 13.12.2010 - 15:15:13
+Dir is set to:		resize1
+Dumpdir is set to:	originals
+Height is set to:	600
+Processing:			img_0103.jpg
+Process started at: 07.02.2011 - 16:45:56
+Dir is set to:		resize1
+Dumpdir is set to:	originals
+Height is set to:	400
+Processing:			test.jpg
