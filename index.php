@@ -1,5 +1,7 @@
 <?php
+//start the session, must be at the first place
 session_start();
+
 
 include('./includes/functions.php');
 include('./includes/htmlcontent.php');
