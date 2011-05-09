@@ -1,6 +1,9 @@
-#Thu May 05 11:14:24 CEST 2011
+#Mon May 09 14:14:45 CEST 2011
 eclipse.preferences.version=1
+TASKS_FILTERS_MIGRATE=true
 tipsAndTricks=true
-platformState=1304529050408
+platformState=1304586038940
+SHOW_PERSPECTIVEBAR=true
 quickStart=false
 PROBLEMS_FILTERS_MIGRATE=true
+SHOW_COOLBAR=true

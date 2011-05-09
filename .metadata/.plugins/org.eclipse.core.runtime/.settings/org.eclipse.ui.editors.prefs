@@ -1,3 +1,33 @@
-#Thu May 05 11:14:24 CEST 2011
+#Mon May 09 14:10:11 CEST 2011
+secondaryIPColor=86,133,227
+htmlTagPairOccurrenceIndicationHighlighting=false
+AbstractTextEditor.Color.Background=255,255,255
+xmlTagPairOccurrenceIndicationColor=127,127,127
+rubyBlockPairOccurrenceIndication=true
 eclipse.preferences.version=1
+pydevOccurrenceIndicationTextStyle=BOX
+pydevOccurrenceIndication=true
+writeOccurrenceIndicationColor=190,207,255
+AbstractTextEditor.Color.Foreground.SystemDefault=false
+AbstractTextEditor.Color.Foreground=0,0,0
+AbstractTextEditor.Color.SelectionBackground=190,207,255
+currentIPColor=86,133,227
+rubyBlockPairOccurrenceIndicationColor=127,127,127
 overviewRuler_migration=migrated_3.1
+htmlTagPairOccurrenceIndication=true
+htmlTagPairOccurrenceIndicationTextStyle=BOX
+rubyBlockPairOccurrenceIndicationHighlighting=false
+xmlTagPairOccurrenceIndicationTextStyle=BOX
+xmlTagPairOccurrenceIndicationHighlighting=false
+currentLineColor=228,236,246
+searchResultIndicationColor=162,176,217
+AbstractTextEditor.Color.SelectionForeground=0,0,0
+pydevOccurrenceHighlighting=false
+rubyBlockPairOccurrenceIndicationTextStyle=BOX
+xmlTagPairOccurrenceIndication=true
+pydevOccurrenceIndicationColor=190,207,255
+AbstractTextEditor.Color.Background.SystemDefault=false
+occurrenceIndicationColor=190,207,255
+AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
+htmlTagPairOccurrenceIndicationColor=127,127,127
+AbstractTextEditor.Color.SelectionForeground.SystemDefault=false

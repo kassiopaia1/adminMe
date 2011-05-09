@@ -1,11 +1,12 @@
 <?php
+include('./includes/sql.php');
 
 function getHTMLHead(){
-	$title = "AdminMe";
-	$stylesheet = "styles.css";
-	$jqueryfile = "jquery-1.5.2.js";
+$title = "AdminMe";
+$stylesheet = "styles.css";
+$jqueryfile = "jquery-1.5.2.js";
 
-	echo '
+echo '
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -13,60 +14,89 @@ function getHTMLHead(){
 <title>'.$title.'</title><link href="'. $stylesheet.'" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="'.$jqueryfile.'"></script>
 <script type="text/javascript">
-			$(document).ready(function(){
-				//design the tables
-				$("tr:even").css({
-					background:"lightgrey"
-				});
-				$("tr:first").css({
-					background:"grey"
-				});
-	
-			});
-		</script>
+$(document).ready(function(){
+//design the tables
+$("tr:even").css({
+background:"lightgrey"
+});
+$("tr:first").css({
+background:"grey"
+});
+
+});
+</script>
 </head>
 <body>'
-	;
+;
 }
 
 function getHeader(){
-	echo '
-	<div class="container">
+echo '
+<div class="container">
 <div class="header"><a href="#"> <img src="header.jpg" alt="Logo"
-	width="100%" height="90" id="logo" /> </a></div>
-	';
+width="100%" height="90" id="logo" /> </a></div>
+';
 }
 
 function getSidebar(){
-	echo '
+$pages = "aM_pages";
+
+echo '
 <div class="sidebar1">
 <ul class="nav">
-	<li><a href="#">Link one</a></li>
-	<li><a href="#">Link two</a></li>
-	<li><a href="#">Link three</a></li>
-	<li><a href="#">Link four</a></li>
+';
+
+mysql_connecter();
+
+@mysql_select_db('test') or die( "Unable to select database");
+
+$query = "SELECT * FROM aM_pages ORDER BY order";
+$result = mysql_query($query);
+
+while($row = mysql_fetch_array($result)){
+echo '<li><a href="index.php?site='.$row['order'].'">'.$row['title'].'</a></li>';
+}
+
+
+/*
+$num=mysql_numrows($result);
+$i=0;
+while ($i < $num) {
+echo '<li><a href="index.php?site='.mysql_result($result, $i, "url").'">';
+echo mysql_result($result,$i,"title");
+echo '</a></li>';
+$i++;
+}
+*/
+
+
+mysql_close();
+
+echo '
+<li><a href="#">Link three</a></li>
+<li><a href="#">Link four</a></li>
 </ul>
 <p>Some Bambam Information<br>
 2011 (c), Flo &amp; Mike</p>
 <div class="login">
 <p>';
 
-	if (isLoggedIn()){
-		echo "Welcome ".$_SESSION['userid']."<br>";
-		echo '<a href="?logout=1">Logout</a>';
-	} else {
-		echo '
-		   <form name="form1" method="post" action="./includes/checklogin.php">
-        Username: <br>
-        <input name="myusername" type="text" id="myusername">
-        <br>
-        Password:<br>
-        <input name="mypassword" type="password" id="mypassword">
-        <input type="submit" name="Submit" value="Login">
-      </form><br><a href="?signup=1">Sign up</a>';
+if (isLoggedIn()){
+echo "Welcome ".$_SESSION['userid']."<br>";
+echo '<a href="?logout=1">Logout</a>';
+} else {
+echo '
+<form name="form1" method="post" action="./includes/checklogin.php">
+Username: <br>
+<input name="myusername" type="text" id="myusername">
+<br>
+Password:<br>
+<input name="mypassword" type="password" id="mypassword">
+<input type="submit" name="Submit" value="Login">
+</form><br><a href="?signup=1">Sign up</a>';
 
-	}
-	echo '
+}
+echo '
 </p>
 </div>
 </div>
@@ -75,8 +105,8 @@ function getSidebar(){
 }
 
 function getContent(){
-	echo '
-	
+echo '
+
 <div class="content">
 <h1>Header one H1</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
@@ -94,41 +124,41 @@ massa eu neque ornare imperdiet. Maecenas ornare lacus id metus
 consequat quis mollis dui auctor. Donec varius neque sit amet lectus
 pulvinar a fringilla libero tempus.</p>
 <table summary="some random data" width="200">
-	<tr>
-		<td>ID</td>
-		<td>Name</td>
-		<td>Age</td>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>Mike</td>
-		<td>24</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>Flo</td>
-		<td>23</td>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>Mike</td>
-		<td>24</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>Flo</td>
-		<td>23</td>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>Mike</td>
-		<td>24</td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td>Flo</td>
-		<td>23</td>
-	</tr>
+<tr>
+<td>ID</td>
+<td>Name</td>
+<td>Age</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mike</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Flo</td>
+<td>23</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mike</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Flo</td>
+<td>23</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mike</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Flo</td>
+<td>23</td>
+</tr>
 </table>
 </p>
 <p>In lorem nisi, lacinia ac vulputate et, fringilla eu odio. Donec
@@ -172,16 +202,14 @@ sed sapien nisl, vel iaculis nulla.</p>
 }
 
 function getFooter(){
-	echo '
+echo '
 <div class="footer">
 <p>This is the footer</p>
 </div>
 </div>
 </body>
 </html>
-	';
+';
 }
-
-
 
 ?>
